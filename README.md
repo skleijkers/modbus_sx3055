@@ -14,3 +14,16 @@ This configuration has been made for the Solarfam SX3055, but it's expected that
 
 In fact the two SolarFam MPPT Controller are relabeled Lumiax MPPT Controllers.
 
+# Install
+
+Open terminal in Home Assistant
+
+cd config
+
+git clone https://github.com/skleijkers/modbus_sx3055 sx3055
+
+Add the following lines to configuration.yaml:
+
+modbus: !include sx3055/sx3055.yaml
+template: !include sx3055/sx3055_template.yaml
+
