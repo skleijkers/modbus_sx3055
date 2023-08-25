@@ -25,5 +25,6 @@ git clone https://github.com/skleijkers/modbus_sx3055 sx3055
 Add the following lines to configuration.yaml:
 
 modbus: !include sx3055/sx3055.yaml
+
 template: !include sx3055/sx3055_template.yaml
 
