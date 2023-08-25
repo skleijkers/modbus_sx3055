@@ -1,0 +1,162 @@
+  - name: hub1
+    type: serial
+    baudrate: 9600
+    bytesize: 8
+    method: rtu
+    parity: N
+    port: /dev/ttyUSB0
+    stopbits: 1
+    # Modbus sensors for SolarFam SX3055
+    sensors:
+    - name: "Charge status"
+      unique_id: sx3055.chargestatus
+      slave: 1
+      address: 12340
+      input_type: input
+      device_class: enum
+    - name: "Discharge status"
+      unique_id: sx3055.dischargestatus
+      slave: 1
+      address: 12341
+      input_type: input
+      device_class: enum
+    - name: "Environment temperature"
+      unique_id: sx3055.environmenttemperature
+      unit_of_measurement: '°C'
+      slave: 1
+      address: 12342
+      input_type: input
+      scale: 0.01
+      device_class: temperature
+    - name: "Device built-in temperature"
+      unique_id: sx3055.devicebuiltintemperature
+      unit_of_measurement: '°C'
+      slave: 1
+      address: 12343
+      input_type: input
+      scale: 0.01
+      device_class: temperature
+    - name: "Battery remaining capacity"
+      unique_id: sx3055.batteryremainingcapacity
+      unit_of_measurement: "%"
+      slave: 1
+      address: 12357
+      input_type: input
+      scale: 1
+      device_class: battery
+    - name: "Battery voltage"
+      unique_id: sx3055.batteryvoltage
+      unit_of_measurement: "V"
+      slave: 1
+      address: 12358
+      input_type: input
+      scale: 0.01
+      precision: 1
+      device_class: voltage
+    - name: "Battery current"
+      unique_id: sx3055.batterycurrent
+      unit_of_measurement: "A"
+      slave: 1
+      address: 12359
+      input_type: input
+      scale: 0.01
+      precision: 2
+      device_class: current
+    - name: "Battery power"
+      unique_id: sx3055.batterypower
+      unit_of_measurement: "W"
+      slave: 1
+      address: 12360
+      input_type: input
+      scale: 0.01
+      count: 2
+      swap: word
+      precision: 2
+      data_type: int32
+      device_class: power
+    - name: "Load voltage"
+      unique_id: sx3055.loadvoltage
+      unit_of_measurement: "V"
+      slave: 1
+      address: 12362
+      input_type: input
+      scale: 0.01
+      precision: 1
+      device_class: voltage
+    - name: "Load current"
+      unique_id: sx3055.loadcurrent
+      unit_of_measurement: "A"
+      slave: 1
+      address: 12363
+      input_type: input
+      scale: 0.01
+      precision: 2
+      device_class: current
+    - name: "Load power"
+      unique_id: sx3055.loadpower
+      unit_of_measurement: "W"
+      slave: 1
+      address: 12364
+      input_type: input
+      scale: 0.01
+      count: 2
+      swap: word
+      precision: 2
+      data_type: int32
+      device_class: power
+    - name: "Solar voltage"
+      unique_id: sx3055.solarvoltage
+      unit_of_measurement: "V"
+      slave: 1
+      address: 12366
+      input_type: input
+      scale: 0.01
+      precision: 1
+      device_class: voltage
+    - name: "Solar current"
+      unique_id: sx3055.solarcurrent
+      unit_of_measurement: "A"
+      slave: 1
+      address: 12367
+      input_type: input
+      scale: 0.01
+      precision: 2
+      device_class: current
+    - name: "Solar power"
+      unique_id: sx3055.solarpower
+      unit_of_measurement: "W"
+      slave: 1
+      address: 12368
+      input_type: input
+      scale: 0.01
+      count: 2
+      swap: word
+      precision: 2
+      data_type: int32
+      device_class: power
+    - name: "Total charging capacity"
+      unique_id: sx3055.totalchargingcapacity
+      unit_of_measurement: "kWh"
+      slave: 1
+      address: 12371
+      input_type: input
+      scale: 0.01
+      count: 2
+      swap: word
+      precision: 2
+      data_type: int32
+      device_class: energy
+      state_class: total_increasing
+    - name: "Total electricity consumption"
+      unique_id: sx3055.totalelectricityconsumption
+      unit_of_measurement: "kWh"
+      slave: 1
+      address: 12374
+      input_type: input
+      scale: 0.01
+      count: 2
+      swap: word
+      precision: 2
+      data_type: int32
+      device_class: energy
+      state_class: total_increasing

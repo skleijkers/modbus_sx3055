@@ -1,0 +1,29 @@
+- sensor:
+  - name: "Battery charging state"
+    unique_id: sx3055.batterychargingstate
+    state: >-
+      {% set d = {
+      '0': 'Day, not charging',
+      '2': 'Fault',
+      '5': 'Day, Float charge',
+      '9': 'Day, Boost charge',
+      '13': 'Day, Equal charge',
+      '32': 'Night'
+        } %}
+      {% if states('sensor.charge_status') in d.keys() %}
+        {{ d.get(states('sensor.charge_status')) }}
+      {% else %}
+        Unknown code {{ states('sensor.charge_status') }}
+      {% endif %}
+  - name: "Battery discharging state"
+    unique_id: sx3055.batterydischargingstate
+    state: >-
+      {% set d = {
+      '0': 'Not discharging',
+      '1': 'Discharging'
+        } %}
+      {% if states('sensor.discharge_status') in d.keys() %}
+        {{ d.get(states('sensor.discharge_status')) }}
+      {% else %}
+        Unknown code {{ states('sensor.discharge_status') }}
+      {% endif %}
