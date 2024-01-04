@@ -69,7 +69,6 @@
       address: 12360
       input_type: input
       scale: 0.01
-      count: 2
       swap: word
       precision: 2
       data_type: int32
@@ -99,7 +98,6 @@
       address: 12364
       input_type: input
       scale: 0.01
-      count: 2
       swap: word
       precision: 2
       data_type: int32
@@ -129,7 +127,6 @@
       address: 12368
       input_type: input
       scale: 0.01
-      count: 2
       swap: word
       precision: 2
       data_type: int32
@@ -141,7 +138,6 @@
       address: 12371
       input_type: input
       scale: 0.01
-      count: 2
       swap: word
       precision: 2
       data_type: int32
@@ -154,7 +150,6 @@
       address: 12374
       input_type: input
       scale: 0.01
-      count: 2
       swap: word
       precision: 2
       data_type: int32
